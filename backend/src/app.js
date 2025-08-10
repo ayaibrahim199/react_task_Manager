@@ -58,6 +58,11 @@ app.use(express.json());
 // Simple health endpoint for Render/Vercel probes
 app.get('/health', (req, res) => res.json({ ok: true }));
 
+// Provide a friendly message at the root to avoid "Cannot GET /"
+app.get('/', (req, res) => {
+  res.type('text/plain').send('Task Manager API is running. Try /health or /api');
+});
+
 console.log('Attempting to connect to MongoDB...');
 
 // Prefer env PORT if provided and not 5000 (avoid macOS ControlCenter on 5000), otherwise default to 5001
