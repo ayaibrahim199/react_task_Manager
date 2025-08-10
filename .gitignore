@@ -1,0 +1,28 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+backend/build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env & secrets
+.env
+**/.env
+.env.*
+
+# OS/editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Tooling
+.vercel/
+.render/
+coverage/ 
