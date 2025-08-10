@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+// Use explicit API URL in production if env var is missing
+const defaultProdApi = 'https://react-task-manager-yw60.onrender.com';
+
 const baseURL = import.meta.env.PROD
-  ? (import.meta.env.VITE_API_URL || '/')
-  : '/';
+  ? (import.meta.env.VITE_API_URL || defaultProdApi)
+  : (import.meta.env.VITE_API_URL || '/');
 
 const api = axios.create({
   baseURL,
